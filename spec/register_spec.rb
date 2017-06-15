@@ -30,7 +30,7 @@ RSpec.describe 'A cash register' do
   describe '.lookup_item' do
     it "returns information about the given item" do
       item_info = Register.lookup_item('Crackers')
-      expect(item_info).to eql ({ product: 'Crackers', price: 3.47, tax_type: 'b' })
+      expect(item_info).to eql ({ product: 'Crackers', price: 3.48, tax_type: 'b' })
     end
 
   end
