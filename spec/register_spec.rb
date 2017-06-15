@@ -8,8 +8,9 @@ RSpec.describe 'A cash register' do
         { product: 'Cheese',   price: 6.98,   tax_type: 'b' }
     ]
     total = Register.total(product_list)
-    expect(total).to eql 24.44
+    expect(total).to eql 25.453
   end
+
   it 'takes an regular item and adds proper tax' do
     product = { product: 'Crackers', price: 3.47,   tax_type: 'b' }
     tax = Register.calculate_tax(product)
@@ -20,4 +21,7 @@ RSpec.describe 'A cash register' do
     tax = Register.calculate_tax(product)
     expect(tax).to eql 0.6995
   end
+
+
+
 end
