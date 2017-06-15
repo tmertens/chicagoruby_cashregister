@@ -1,6 +1,6 @@
 
 module Register
   def self.total(items)
-    nil
+    items.inject(0) { |sum, item| sum + item[:price] }
   end
 end
