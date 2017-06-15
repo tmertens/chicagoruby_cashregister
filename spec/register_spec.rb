@@ -8,6 +8,6 @@ RSpec.describe 'A cash register' do
         { product: 'Cheese',   price: 6.98,   type: 'b' }
     ]
     total = Register.total(product_list)
-    expect(total).to eql 24.43
+    expect(total).to eql 24.44
   end
 end
