@@ -1,3 +1,9 @@
+PRODUCT_LIST =  [
+  { product: 'Crackers', price: 3.47,   tax_type: 'b' },
+  { product: 'Red Wine', price: 13.99,  tax_type: 'v' },
+  { product: 'Cheese',   price: 6.98,   tax_type: 'b' }
+]
+
 module Register
   def self.total(items)
     items.inject(0) { |sum, item| sum + price_with_tax(item) }
@@ -15,14 +21,9 @@ module Register
     item[:price] * get_tax_rate(item[:tax_type])
   end
 
+  def self.lookup_item(item_name)
+    PRODUCT_LIST.find { |item|
+      item[:product] == item_name
+    }
+  end
 end
-
-=begin
-
-product_list = [
-    { product: 'Crackers', price: 3.47,   tax_type: 'b' },
-    { product: 'Red Wine', price: 13.99,  tax_type: 'v' },
-    { product: 'Cheese',   price: 6.98,   tax_type: 'b' }
-]
-
-=end
